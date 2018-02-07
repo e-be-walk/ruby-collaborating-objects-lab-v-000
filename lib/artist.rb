@@ -10,20 +10,12 @@ class Artist
   def save
     @@all << self
   end
-  
-  def self.find_or_create_by_name()
-    unique_artists = []
-    @@all.each do |a|
-      if !unique_artists.include?(a)
-        unique_artists << a
-      end
+
+
+  def print_songs
+    @songs.each do |song|
+      puts song.name
     end
-    unique_artists
-  end
-
-
-  def self.print_songs
-    @@all
   end
 
 end
