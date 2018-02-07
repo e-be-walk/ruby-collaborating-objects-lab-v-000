@@ -15,6 +15,15 @@ class Artist
     @songs << song
   end
 
+  def self.find_or_create_by_name(name)
+    artist = @@all.detect {|artist| artist.name == name}
+    if artist.nil?
+      artist = self.new(name)
+      artist.save
+    end
+    artist
+  end
+
   def print_songs
     @songs.each do |song|
       puts song.name
