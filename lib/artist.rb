@@ -4,9 +4,13 @@ class Artist
 
   def initialize(name)
     @name = name
-    @songs = []
+    @song = []
   end
 
+  def song(song_name)
+    new_song = Song.new(song_name)
+    add_song(new_song)
+  end
 
   def self.find_or_create_by_name()
     unique_artists = []
