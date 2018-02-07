@@ -7,11 +7,10 @@ class Artist
     @song = []
   end
 
-  def song(song_name)
-    new_song = Song.new(song_name)
-    add_song(new_song)
+  def save
+    @@all << self
   end
-
+  
   def self.find_or_create_by_name()
     unique_artists = []
     @@all.each do |a|
